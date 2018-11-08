@@ -18,9 +18,6 @@ public class Predmet {
         this.predmetID = id;
     }
 
-    private ArrayList<Student> studenti;
-
-
 
     public void setNazivPredmeta(String nazivPredmeta) {
         this.nazivPredmeta = nazivPredmeta;
@@ -46,12 +43,6 @@ public class Predmet {
         this.maxBrojStudenata = maxBrojStudenata;
     }
 
-    public void setStudenti(ArrayList<Student> studenti) {
-        this.studenti = studenti;
-    }
-
-
-
     public String getNazivPredmeta() {
         return nazivPredmeta;
     }
@@ -75,12 +66,6 @@ public class Predmet {
     public int getMaxBrojStudenata() {
         return maxBrojStudenata;
     }
-
-    public ArrayList<Student> getStudenti() {
-        return studenti;
-    }
-
-
 
 
 }

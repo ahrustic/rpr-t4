@@ -1,20 +1,26 @@
 package ba.unsa.etf.rpr.tutorijal4;
 
-import ba.unsa.etf.rpr.tutorijal4.PodaciOSemestru;
-
-import java.util.ArrayList;
-
 public class Student {
     private String ime, prezime;
     private int brojIndexa;
-    private ArrayList<PodaciOSemestru> arhiva;
+    private int ects;
+    public int getEcts() {
+        return ects;
+    }
+
+    public void setEcts(int ects) {
+        this.ects = ects;
+    }
+
+
 
     public Student() {}
 
-    public Student(String ime, String preezime, int bi) {
+    public Student(String ime, String preezime, int bi, int poeni) {
         this.ime = ime;
         this.prezime = preezime;
         this.brojIndexa = bi;
+        this.ects = poeni;
     }
 
     public void setIme(String ime) {
