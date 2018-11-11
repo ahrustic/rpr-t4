@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.tutorijal4;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 public class Predmet {
     private String nazivPredmeta, imeIPrezimeProfesora;
@@ -8,6 +9,7 @@ public class Predmet {
     private int brojStudenata;
     private int predmetID;
     private int maxBrojStudenata;
+    private Set<Student> spisakStudenata;
 
     public Predmet(String naziv, String ime, int ects, int broj, int max, int id) {
         this.nazivPredmeta = naziv;
@@ -67,5 +69,14 @@ public class Predmet {
         return maxBrojStudenata;
     }
 
+    public void dodajStudenta(Student student){
+        student.upisiStudentaNaPredmet(this);
+        spisakStudenata.add(student);
+    }
+
+    public void ispisiStudenta(Student student) {
+        spisakStudenata.remove(student);
+        student.ispisiStudentaSaPredmeta(this);
+    }
 
 }
