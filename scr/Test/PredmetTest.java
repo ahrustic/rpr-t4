@@ -1,5 +1,7 @@
-package ba.unsa.etf.rpr.tutorijal4;
+package Test;
 
+import ba.unsa.etf.rpr.tutorijal4.Predmet;
+import ba.unsa.etf.rpr.tutorijal4.Student;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
