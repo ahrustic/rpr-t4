@@ -7,42 +7,20 @@ public class Predmet {
     private String nazivPredmeta, imeIPrezimeProfesora;
     private  int ECTS;
     private int brojStudenata;
-    private int predmetID;
     private int maxBrojStudenata;
-    private Set<Student> spisakStudenata;
+    private ArrayList<Student> spisakStudenata;
 
-    public Predmet(String naziv, String ime, int ects, int broj, int max, int id) {
+    public Predmet(String naziv, String ime, int ects, int broj, int max) {
         this.nazivPredmeta = naziv;
         this.imeIPrezimeProfesora = ime;
         this.ECTS = ects;
         this.brojStudenata = broj;
         this.maxBrojStudenata = max;
-        this.predmetID = id;
     }
 
-
-    public void setNazivPredmeta(String nazivPredmeta) {
+    public Predmet(String nazivPredmeta, String imeIPrezimeProfesora) {
         this.nazivPredmeta = nazivPredmeta;
-    }
-
-    public void setImeIPrezimeProfesora(String imeIPrezimeProfesora) {
         this.imeIPrezimeProfesora = imeIPrezimeProfesora;
-    }
-
-    public void setECTS(int ECTS) {
-        this.ECTS = ECTS;
-    }
-
-    public void setBrojStudenata(int brojStudenata) {
-        this.brojStudenata = brojStudenata;
-    }
-
-    public void setPredmetID(int predmetID) {
-        this.predmetID = predmetID;
-    }
-
-    public void setMaxBrojStudenata(int maxBrojStudenata) {
-        this.maxBrojStudenata = maxBrojStudenata;
     }
 
     public String getNazivPredmeta() {
@@ -61,25 +39,26 @@ public class Predmet {
         return brojStudenata;
     }
 
-    public int getPredmetID() {
-        return predmetID;
-    }
-
     public int getMaxBrojStudenata() {
         return maxBrojStudenata;
     }
 
     public void dodajStudenta(Student student){
-        student.upisiStudentaNaPredmet(this);
         spisakStudenata.add(student);
     }
 
     public void ispisiStudenta(Student student) {
         spisakStudenata.remove(student);
-        student.ispisiStudentaSaPredmeta(this);
     }
 
     public String vratiNazivPredmeta() {
-        return  nazivPredmeta;
+        return nazivPredmeta;
+    }
+
+    public String vratiSpisakUpisanihStudenata() {
+        String spisakUpisanihStudenata = "";
+        for (int i = 1; i <= spisakStudenata.size() ; i++)
+            spisakUpisanihStudenata += i + ". " + spisakStudenata.get(i - 1).getIme() + " " + spisakStudenata.get(i - 1).getPrezime() + "\n";
+        return spisakUpisanihStudenata;
     }
 }
