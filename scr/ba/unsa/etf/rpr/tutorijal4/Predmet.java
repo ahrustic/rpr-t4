@@ -79,4 +79,7 @@ public class Predmet {
         student.ispisiStudentaSaPredmeta(this);
     }
 
+    public String vratiNazivPredmeta() {
+        return  nazivPredmeta;
+    }
 }
